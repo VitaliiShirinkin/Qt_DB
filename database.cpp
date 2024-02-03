@@ -53,6 +53,9 @@ void DataBase::DisconnectFromDataBase(QString nameDb)
 {
     *dataBase = QSqlDatabase::database(nameDb);
     dataBase->close();
+    delete tableModel;
+    delete queryModel;
+
 }
 /*!
  * \brief Метод формирует запрос к БД.
